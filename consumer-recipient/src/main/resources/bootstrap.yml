@@ -1,0 +1,14 @@
+server:
+  port: 12102
+spring:
+  application:
+    name: consumer-recipient
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://116.62.7.168:8848
+      config:
+        server-addr: http://116.62.7.168:8848
+        file-extension: yml
+  profiles:
+    active: dev
