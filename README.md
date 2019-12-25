@@ -14,7 +14,7 @@
   账号密码都为nacos
 4.替换每个微服务bootstrap.yml的nacos地址为你自己的地址；并在nacos中添加配置文件，配置文件放在material包下
   	
-
+注意： 如果使用mysql数据源配置，一定要加上 spring.datasource.platform=mysql ，官方文档上没有详细说明，但是一定要加上，不然不生效
  ****
 
 ##安装Sentinel控制台
