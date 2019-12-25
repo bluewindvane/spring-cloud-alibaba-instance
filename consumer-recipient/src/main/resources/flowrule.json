@@ -1,0 +1,10 @@
+[
+  {
+    "resource": "GET:http://service-provider/configInfo/getAppId",
+    "controlBehavior": 0,
+    "count": 1,
+    "grade": 0,
+    "limitApp": "default",
+    "strategy": 0
+  }
+]

@@ -1,2 +1,12 @@
-server:
-  port: 12101
+myInfo:
+  app: 这是服务端啊
+
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -2,6 +2,7 @@ package com.maple.consumerrecipient.controller;
 
 import com.maple.consumerrecipient.feign.ServiceProviderFeign;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,13 @@ public class GrabFeignInfoController {
     private ServiceProviderFeign serviceProviderFeign;
 
     @GetMapping("/getServiceProviderAppName")
-    public String getServiceProviderAppName() {
+    public String getServiceProviderAppName() throws InterruptedException {
         return serviceProviderFeign.getAppName();
+    }
+
+    @GetMapping("/getServiceProviderAppId")
+    public String getServiceProviderAppId() throws InterruptedException {
+        return serviceProviderFeign.getAppId();
     }
 
 }

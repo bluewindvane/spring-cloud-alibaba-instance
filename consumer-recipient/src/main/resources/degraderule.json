@@ -1,0 +1,8 @@
+[
+  {
+    "resource": "GET:http://service-provider/configInfo/getAppName",
+    "count": 0.5,
+    "grade": 0,
+    "timeWindow": 5
+  }
+]

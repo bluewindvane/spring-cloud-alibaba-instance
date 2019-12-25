@@ -21,4 +21,9 @@ public class GrabConfigPropertiesController {
         return appName;
     }
 
+    @GetMapping("/getAppId")
+    public String getAppId() {
+        return "sadasd123jsdkas";
+    }
+
 }
