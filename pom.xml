@@ -19,6 +19,7 @@
     <modules>
         <module>service-provider</module>
         <module>consumer-recipient</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
