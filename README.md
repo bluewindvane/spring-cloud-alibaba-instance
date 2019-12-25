@@ -12,8 +12,7 @@
   	
 3.默认的打开连接为localhost:8848/nacos 
   账号密码都为nacos
-4.替换每个微服务bootstrap.yml的nacos地址为你自己的地址；并在nacos中添加配置文件（service-provider-dev.yml 	
-consumer-recipient-dev.yml），将application.yml注释的代码取消注释
+4.替换每个微服务bootstrap.yml的nacos地址为你自己的地址；并在nacos中添加配置文件，配置文件放在material包下
   	
 
   	
