@@ -15,7 +15,6 @@
 4.替换每个微服务bootstrap.yml的nacos地址为你自己的地址；并在nacos中添加配置文件，配置文件放在material包下
   	
 
-  	
  ****
 
 ##安装Sentinel控制台
@@ -26,6 +25,10 @@
     java -Dserver.port=8849 -Dcsp.sentinel.dashboard.server=localhost:8849 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
     
 3.默认账号密码都为sentinel,可通过jar包启动命令修改
+
+ 注意： sentinel默认没有持久化规则，如果需要可以集成第三方，或者像本实例一样加在json文件的形式添加。
+ 另外使用注解时value名称要和调用地址一致，目前测试出来自定义资源名不生效（目前没有详细测试）。
+ 还有目前测试出来自定义规则异常返回需要严格按照官方给要求书写。比如说作者使用了流控，但是使用blockeException参数未生效。
 
 ****
 
