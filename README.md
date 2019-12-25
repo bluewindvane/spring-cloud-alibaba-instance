@@ -1,5 +1,7 @@
 # spring-cloud-alibaba-instance
-说明：alibaba微服务实例   
+说明：alibaba微服务实例  
+
+项目依赖放置在 material文件中，自行查看
 
 ##安装nacos
 1.从github获取nacos压缩包
