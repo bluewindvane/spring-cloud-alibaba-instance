@@ -14,5 +14,13 @@
     "grade": 1,
     "limitApp": "default",
     "strategy": 0
+  },
+  {
+    "resource": "sentinel_web_servlet_context",
+    "controlBehavior": 0,
+    "count": 1,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
   }
 ]

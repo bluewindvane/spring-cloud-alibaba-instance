@@ -19,11 +19,17 @@ import java.util.Random;
 public class TestController {
 
     @PostConstruct
-    public void init(){
+    public void init() {
         WebCallbackManager.setUrlBlockHandler(new CustomUrlBlockHandler());
     }
 
 
+    /**
+     * 流控规则，快速刷几下就能看到效果
+     *
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/testSentinelResource")
     @SentinelResource(value = "/test/testSentinelResource", blockHandler = "exceptionHandler")
     public String testSentinelResource() throws Exception {
@@ -40,6 +46,18 @@ public class TestController {
     public String exceptionHandler(BlockException ex) {
         log.error("blockHandler：" + ex);
         return "流控出错了";
+    }
+
+    // 限流与阻塞处理
+    public String exceptionHandlerTwo(BlockException ex) {
+        log.error("blockHandler：" + ex);
+        return "另一个流控出错了";
+    }
+
+    @GetMapping("/testGlobalSentinelResource")
+    @SentinelResource(value = "sentinel_web_servlet_context", blockHandler = "exceptionHandlerTwo")
+    public String testGlobalSentinelResource() {
+        return "success";
     }
 
 }
