@@ -42,6 +42,26 @@ public class TestController {
         return "success";
     }
 
+    /**
+     * 测试全局流控
+     * @return
+     */
+    @GetMapping("/testGlobalSentinelResource")
+    @SentinelResource(value = "sentinel_web_servlet_context", blockHandler = "exceptionHandlerTwo")
+    public String testGlobalSentinelResource() {
+        return "success";
+    }
+
+    /**
+     * 测试自定义资源名流控
+     * @return
+     */
+    @GetMapping("/testCustomSentinelResource")
+    @SentinelResource(value = "resource", blockHandler = "exceptionHandlerThree")
+    public String testCustomSentinelResource() {
+        return "success";
+    }
+
     // 限流与阻塞处理
     public String exceptionHandler(BlockException ex) {
         log.error("blockHandler：" + ex);
@@ -51,13 +71,13 @@ public class TestController {
     // 限流与阻塞处理
     public String exceptionHandlerTwo(BlockException ex) {
         log.error("blockHandler：" + ex);
-        return "另一个流控出错了";
+        return "又流控出错了";
     }
 
-    @GetMapping("/testGlobalSentinelResource")
-    @SentinelResource(value = "sentinel_web_servlet_context", blockHandler = "exceptionHandlerTwo")
-    public String testGlobalSentinelResource() {
-        return "success";
+    // 限流与阻塞处理
+    public String exceptionHandlerThree(BlockException ex) {
+        log.error("blockHandler：" + ex);
+        return "又双流控出错了";
     }
 
 }

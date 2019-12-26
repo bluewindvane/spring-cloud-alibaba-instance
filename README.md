@@ -30,7 +30,7 @@
 
  注意： 
  1.sentinel默认没有持久化规则(服务重启或者sentinel就没了)，如果需要可以集成第三方，或者像本实例一样加在json文件的形式添加。
- 2.使用注解时value名称要和调用地址一致，目前测试出来自定义资源名不生效（没有详细测试）。
+ 2.使用注解时value名称可以和url调用地址一致，对url制定规则，或者自定义资源名指定规则。
  3.还有目前测试出来自定义规则异常返回需要严格按照官方给要求书写。
  比如说testSentinelResource使用了blockHandler捕获流控，但是实际测试发现他还会走默认DefaultUrlBlockHandler方法，产生的结果就是流控之后返回值会在blockHandler的返回值和DefaultUrlBlockHandler的response返回值二选一随机返回，两个方法都需要实现。
  另外
